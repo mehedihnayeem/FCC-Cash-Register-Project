@@ -1,14 +1,14 @@
 let price = 19.5;
 let cid = [
-    ["PENNY", 0.5],
-    ["NICKEL", 0],
-    ["DIME", 0],
-    ["QUARTER", 0],
-    ["ONE", 0],
-    ["FIVE", 0],
-    ["TEN", 0],
-    ["TWENTY", 0],
-    ["ONE HUNDRED", 0]
+    ["PENNY", 1.01],
+    ["NICKEL", 2.05],
+    ["DIME", 3.1],
+    ["QUARTER", 4.25],
+    ["ONE", 90],
+    ["FIVE", 55],
+    ["TEN", 20],
+    ["TWENTY", 60],
+    ["ONE HUNDRED", 100]
 ];
 
 let currencyValue = [
@@ -59,7 +59,7 @@ priceTotal.textContent = price
 purchaseBtn.addEventListener("click", () => {
     const inputValue = Number(cash.value);
     let cidTotal = cid.reduce((total, item) => total + item[1], 0);
-    let cashDue = inputValue - price; 
+    let cashDue = inputValue - price;
     cashDue = Number(cashDue.toFixed(2));
 
     if (inputValue < price) {
@@ -79,7 +79,7 @@ purchaseBtn.addEventListener("click", () => {
 
     if (cashDue > cidTotal) {
         changeDue.textContent = "Status: INSUFFICIENT_FUNDS";
-        return; 
+        return;
     }
 
     console.log(inputValue, cashDue, cidTotal);
@@ -109,7 +109,7 @@ purchaseBtn.addEventListener("click", () => {
                     cashDue -= usedValue;
                     cashDue = Number(cashDue.toFixed(2));
 
-                    change.push([denominationName, usedValue]); 
+                    change.push([denominationName, usedValue]);
                 }
             }
         }
@@ -123,7 +123,7 @@ purchaseBtn.addEventListener("click", () => {
             let usedValue = item[1];
             let cidItem = cid.find(cidItem => cidItem[0] === denominationName);
             if (cidItem) {
-                cidItem[1] += usedValue; 
+                cidItem[1] += usedValue;
             }
         });
     } else {
@@ -134,10 +134,10 @@ purchaseBtn.addEventListener("click", () => {
             if (element) {
                 if (usedValue > 0) {
                     element.textContent = `$${formatCurrency(usedValue)}`;
-                    element.parentElement.style.display = "block"; 
+                    element.parentElement.style.display = "block";
                 } else {
-                    element.textContent = ""; 
-                    element.parentElement.style.display = "none"; 
+                    element.textContent = "";
+                    element.parentElement.style.display = "none";
                 }
             }
         });
@@ -154,7 +154,7 @@ purchaseBtn.addEventListener("click", () => {
         statusValue.parentElement.style.display = "block";
     }
 
-    cash.value = ""; 
+    cash.value = "";
     console.log(`Remaining Cash Due: ${cashDue}`);
     console.log(cid);
     updateCid();
@@ -165,15 +165,15 @@ const formatCurrency = (value) => {
 };
 
 const updateCid = () => {
-    penniesInDreawer.textContent = `$${formatCurrency(cid[0][1])}`;
-    nickelsInDreawer.textContent = `$${formatCurrency(cid[1][1])}`;
-    dimesInDreawer.textContent = `$${formatCurrency(cid[2][1])}`;
-    quartersInDreawer.textContent = `$${formatCurrency(cid[3][1])}`;
-    onesInDreawer.textContent = `$${formatCurrency(cid[4][1])}`;
-    fivesInDreawer.textContent = `$${formatCurrency(cid[5][1])}`;
-    tensInDreawer.textContent = `$${formatCurrency(cid[6][1])}`;
-    twentiesInDreawer.textContent = `$${formatCurrency(cid[7][1])}`;
-    hundredsInDreawer.textContent = `$${formatCurrency(cid[8][1])}`;
+    penniesInDreawer.textContent = `${formatCurrency(cid[0][1])}`;
+    nickelsInDreawer.textContent = `${formatCurrency(cid[1][1])}`;
+    dimesInDreawer.textContent = `${formatCurrency(cid[2][1])}`;
+    quartersInDreawer.textContent = `${formatCurrency(cid[3][1])}`;
+    onesInDreawer.textContent = `${formatCurrency(cid[4][1])}`;
+    fivesInDreawer.textContent = `${formatCurrency(cid[5][1])}`;
+    tensInDreawer.textContent = `${formatCurrency(cid[6][1])}`;
+    twentiesInDreawer.textContent = `${formatCurrency(cid[7][1])}`;
+    hundredsInDreawer.textContent = `${formatCurrency(cid[8][1])}`;
 };
 
 updateCid();
