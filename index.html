@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/png"
+      href="https://cdn.freecodecamp.org/universal/favicons/favicon.ico"
+    />
+    <title>Cash Register Project</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main>
+      <img
+        class="freecodecamp-logo"
+        src="https://cdn.freecodecamp.org/platform/universal/fcc_primary.svg"
+        alt="freeCodeCamp Logo"
+      />
+      <h1>Cash Register Project</h1>
+      <p class="noChangeMessage"></p>
+      <div class="cash-register-container">
+        <div id="change-due">
+          <p class="status-heading">
+            Status: <span class="statusValue"></span>
+          </p>
+          <p>Hundred: <span class="onehundredValue"></span></p>
+          <p>Twenty: <span class="twentyValue"></span></p>
+          <p>Ten: <span class="tenValue"></span></p>
+          <p>Five: <span class="fiveValue"></span></p>
+          <p>One: <span class="oneValue"></span></p>
+          <p>Quarter: <span class="quarterValue"></span></p>
+          <p>Dime: <span class="dimeValue"></span></p>
+          <p>Penny: <span class="pennyValue"></span></p>
+        </div>
+        <div class="customer-input">
+          <label for="cash">Enter cash from customer:</label>
+          <input type="number" id="cash" required />
+          <button id="purchase-btn">Purchase</button>
+        </div>
+        <div class="cash-register">
+          <div class="total">Total: $<span class="priceTotal"></span></div>
+          <div class="big-line"></div>
+          <div class="register-box">
+            <div class="register-square">
+              <div>
+                <div class="square-box"></div>
+                <div class="square-box"></div>
+                <div class="square-box"></div>
+              </div>
+              <div>
+                <div class="square-box"></div>
+                <div class="square-box"></div>
+                <div class="square-box"></div>
+              </div>
+              <div>
+                <div class="square-box"></div>
+                <div class="square-box"></div>
+                <div class="square-box"></div>
+              </div>
+            </div>
+            <div class="drawer-money">
+              <p class="drawer-money-title">Change in drawer:</p>
+              <p>Pennies: $<span class="penniesInDreawer"></span></p>
+              <p>Nickels: $<span class="nickelsInDreawer"></span></p>
+              <p>Dimes: $<span class="dimesInDreawer"></span></p>
+              <p>Quarters: $<span class="quartersInDreawer"></span></p>
+              <p>Ones: $<span class="onesInDreawer"></span></p>
+              <p>Fives: $<span class="fivesInDreawer"></span></p>
+              <p>Tens: $<span class="tensInDreawer"></span></p>
+              <p>Twenties: $<span class="twentiesInDreawer"></span></p>
+              <p>Hundreds: $<span class="hundredsInDreawer"></span></p>
+            </div>
+          </div>
+          <div class="drawer-footer"></div>
+        </div>
+      </div>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
