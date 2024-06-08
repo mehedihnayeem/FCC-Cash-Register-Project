@@ -143,12 +143,8 @@ purchaseBtn.addEventListener("click", () => {
         });
 
         if (originalCashDue > 0 && cid.every(item => item[1] === 0)) {
-            let changeDisplay = change.map(item => `${item[0]}: $${formatCurrency(item[1])}`).join("\n");
-            changeDue.textContent = `Status: CLOSED\n${changeDisplay}`;
             statusValue.textContent = "CLOSED";
         } else {
-            let changeDisplay = change.map(item => `${item[0]}: $${formatCurrency(item[1])}`).join("\n");
-            changeDue.textContent = `Status: OPEN\n${changeDisplay}`;
             statusValue.textContent = "OPEN";
         }
         statusValue.parentElement.style.display = "block";
